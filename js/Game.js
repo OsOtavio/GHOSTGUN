@@ -74,7 +74,7 @@ class Game
     this.addSprites(powerCoins, 18, powerCoinImage, 0.09);
 
     //Adicionar sprite de obstáculo no jogo
-    
+    this.addSprites(obstacles,obstaclesPositions.length,obstaclesImage,0.04, obstaclesPositions);
   }
 
   //adicione o parâmetro de posição à addSprites()
