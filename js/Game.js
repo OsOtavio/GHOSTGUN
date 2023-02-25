@@ -159,7 +159,8 @@ class Game
           ellipse(x, y, 60, 60);
 
           //chamar a função handleFuel e handlePowerCoins
-
+          this.handleFuel(index);
+          this.handlePowerCoins(index);
           
 
           //alterar a posição da câmera na direção y
@@ -254,11 +255,19 @@ class Game
   }
 
   handleFuel(index) {
-        
+        cars[index-1].overlap(fuels,function(collector,collected){
+        player.fuel=185;
+        collected.remove();
+        })
   }
 
   handlePowerCoins(index) 
   {
+    cars[index-1].overlap(powerCoins,function(collector,collected){
+        player.score+=21;
+        player.update();
+      collected.remove();
+        })
    
   }
 }
